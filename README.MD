@@ -66,7 +66,7 @@ function abort(reason?: string): void
 function onAbort(fn: (...args: any[]) => any): void
 ```
 
-### Shows the state of current operation controller 
+### Shows the state of current operation abort controller 
 ```ts
 state: {
     aborted: boolean // default false, state of abort operation

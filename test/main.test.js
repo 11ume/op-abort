@@ -1,5 +1,5 @@
 const test = require('ava')
-const abortController = require('../main')
+const oa = require('../main')
 
 const intervaler = (time, ac, fn) => new Promise((resolve) => {
     const clear = setInterval(fn, time)
@@ -11,7 +11,7 @@ const intervaler = (time, ac, fn) => new Promise((resolve) => {
 
 test('test abort', async (t) => {
     let counter = 0
-    const ac = abortController()
+    const ac = oa()
     intervaler(1000, ac, () => counter++)
 
     const run = () => new Promise((resolve) => {
@@ -30,35 +30,35 @@ test('test abort', async (t) => {
 })
 
 test('test abort whit reason', async (t) => {
-    const ac = abortController()
+    const ac = oa()
     ac.onAbort(Function)
     ac.abort('foo')
     t.is(ac.state.reason, 'foo')
 })
 
 test('test define onAbort whitout pass a parameter', async (t) => {
-    const ac = abortController()
+    const ac = oa()
     const err = t.throws(ac.onAbort)
     t.is(err.name, 'Param is required')
     t.is(err.message, 'Param handler is required')
 })
 
 test('test define onAbort whitout pass a function', async (t) => {
-    const ac = abortController()
+    const ac = oa()
     const err = t.throws(() => ac.onAbort(1))
     t.is(err.name, 'Param is not a function')
     t.is(err.message, 'Param handler must be function')
 })
 
 test('test abort whitout define before the handler', async (t) => {
-    const ac = abortController()
+    const ac = oa()
     const err = t.throws(ac.abort)
     t.is(err.name, 'Abort handler not defined')
     t.is(err.message, 'The abort handler, must be defined before call abort')
 })
 
 test('test abort after invoke abort', async (t) => {
-    const ac = abortController()
+    const ac = oa()
     ac.onAbort(Function)
     ac.abort()
     const err = t.throws(ac.abort)

@@ -16,7 +16,7 @@ $ npm install
 > Create a promise that can be canceled
 
 ```js
-    const abortController = require('abortController')
+    const oa = require('op-abort')
     const display = (each, ac) => new Promise((resolve) => {
         const clear = setInterval(() => console.log('foo'), each)
         ac.onAbort(() => {
@@ -25,21 +25,26 @@ $ npm install
         })
     })
 
-    const ac = abortController()
+    const ac = oa()
     display(1000, ac)
     setTimeout(ac.abort, 4000)
 ```
 
 ## API
 
+### Function contructor of operation controller
+```ts
+function oa(): Oa // This returns the next methods and properties
+```
+
 ### Is invoked when u want cancel the operation
 ```ts
-abort(reason?: string): void
+function abort(reason?: string): void
 ```
 
 ### Is defined and invoekd before of abort any operation
 ```ts
-onAbort(fn: (...args: any[]) => any): void
+function onAbort(fn: (...args: any[]) => any): void
 ```
 
 ### Shows the state of current operation controller 

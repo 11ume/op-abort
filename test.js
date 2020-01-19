@@ -10,6 +10,6 @@ const delay = (time, ac, fn) => new Promise((resolve) => {
 const ac = abortController()
 delay(1000, ac, () => console.log('foo'))
 setTimeout(() => {
-    ac.abort('p[or que si')
+    ac.abort()
     console.log(ac.state)
 }, 4000)

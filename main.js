@@ -1,9 +1,13 @@
 const { isRequired, isFunction, createError } = require('./utils')
 
-const abort = (state) => (reason = null) => {
+const isAborted = (state) => {
     if (state.aborted) {
         throw createError('Operation aborted', 'The operation has already been aborted')
     }
+}
+
+const abort = (state) => (reason = null) => {
+    isAborted()
 
     if (!state.handler) {
         throw createError('Handler not defined', 'The operation aborted handler must be defined frist')
@@ -15,6 +19,7 @@ const abort = (state) => (reason = null) => {
 }
 
 const onAbort = (state) => (handler = isRequired('handler')) => {
+    isAborted()
     isFunction(handler, 'handler')
     state.handler = handler
 }
@@ -26,7 +31,7 @@ const createAbortController = () => {
         , handler: null
     }
 
-    const controller = {
+    return {
         abort: abort(state)
         , onAbort: onAbort(state)
         , get state() {
@@ -36,8 +41,6 @@ const createAbortController = () => {
             }
         }
     }
-
-    return controller
 }
 
 module.exports = createAbortController

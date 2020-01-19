@@ -1,11 +1,5 @@
 <h1> Simple and pretty utility to abort operations like promises
 
-
-<h3> Examples:
-<br>
-
-> Create a promise that can be canceled
-
 ## Install
 
 ```
@@ -13,6 +7,9 @@ $ npm install
 ```
 
 ## Usage
+<br>
+
+> Create a promise that can be canceled
 
 ```js
     const abortController = require('abortController')

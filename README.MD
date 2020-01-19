@@ -30,7 +30,7 @@ $ npm install
     setTimeout(ac.abort, 4000)
 ```
 
-##API
+## API
 
 ### Is invoked when u want cancel the operation
 ```ts

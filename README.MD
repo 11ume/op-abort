@@ -1,11 +1,17 @@
 <br>
+<br>
+<br>
 
-<h2> Simple and pretty utility to abort operations 🚏
+_**Op** — Is a simple and pretty utility to abort operations 🚏_
+
 <br>
 <br>
+<br>
+
+---
 
 ## Reason
-
+<br>
 It can be used to cancel all types of asynchronous operations, since the conventional mechanisms like promises, does not have a way to do it.
 
 The other reason why you can use this small library is, for example [p-cancelable](https://github.com/sindresorhus/p-cancelable) is cool, but have a few problems when used in promises that return other promises, 

@@ -1,5 +1,6 @@
-<h1> Simple pretty utility to abort operations like promises
-<h2> Examples:
+<h1> Simple and pretty utility to abort operations like promises
+
+Examples:
 
 > Create a promise that can be canceled
 

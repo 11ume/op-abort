@@ -4,6 +4,15 @@
 <br>
 <br>
 
+## Reason
+
+It can be used to cancel all types of asynchronous operations, since the conventional mechanisms like promises, does not have a way to do it.
+
+The other reason why you can use this small library is, for example [p-cancelable](https://github.com/sindresorhus/p-cancelable) is cool, but have a few problems when used in promises that return other promises, 
+or in other espesific contexts. 
+**op-abortion**, is totally agnostic to the logic of a promise and this makes it simpler to clearer and avoid side effects.
+
+
 ## Install
 
 ```

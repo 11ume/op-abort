@@ -1,4 +1,4 @@
-<h1> Simple and pretty utility to abort operations like promises
+<h1> Simple and pretty utility to abort operations
 
 ## Install
 

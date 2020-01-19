@@ -2,13 +2,13 @@ const { isRequired, isFunction, createError } = require('./utils')
 
 const isAborted = (state) => {
     if (state.aborted) {
-        throw createError('Operation aborted', 'The operation has already been aborted')
+        throw createError('Operation abort', 'The operation has already been aborted')
     }
 }
 
 const isHandlerNotDefined = (state) => {
     if (!state.handler) {
-        throw createError('Handler not defined', 'The abort handler, must be defined before call abort')
+        throw createError('Abort handler not defined', 'The abort handler, must be defined before call abort')
     }
 }
 
@@ -22,7 +22,6 @@ const abort = (state) => (reason = null) => {
 }
 
 const onAbort = (state) => (handler = isRequired('handler')) => {
-    isAborted(state)
     isFunction(handler, 'handler')
     state.handler = handler
 }

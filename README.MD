@@ -61,7 +61,7 @@ function oa(): Oa // This returns the next methods and properties
 function abort(reason?: string): void
 ```
 
-### Is defined and invoekd before of abort any operation
+### Is defined and invoked before of abort any operation
 ```ts
 function onAbort(fn: (...args: any[]) => any): void
 ```

@@ -3,11 +3,11 @@ type State = {
     , reason: string
 }
 
-export type Oa = {
+export type OperationAbort = {
     abort: (reason?: string) => void
     , onAbort: (fn: (...args: any[]) => any) => void
     , state: State
 }
 
-declare function oa(): Oa
-export default oa
+declare function createOperationAbort(): OperationAbort
+export default OperationAbortController

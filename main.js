@@ -26,7 +26,7 @@ const onAbort = (state) => (handler = isRequired('handler')) => {
     state.handler = handler
 }
 
-const oa = () => {
+const createOperationAbort = () => {
     const state = {
         aborted: false
         , reason: null
@@ -45,4 +45,4 @@ const oa = () => {
     }
 }
 
-module.exports = oa
+module.exports = createOperationAbort

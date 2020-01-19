@@ -6,12 +6,15 @@ const isAborted = (state) => {
     }
 }
 
-const abort = (state) => (reason = null) => {
-    isAborted()
-
+const isHandlerNotDefined = (state) => {
     if (!state.handler) {
-        throw createError('Handler not defined', 'The operation aborted handler must be defined frist')
+        throw createError('Handler not defined', 'The abort handler, must be defined before call abort')
     }
+}
+
+const abort = (state) => (reason = null) => {
+    isAborted(state)
+    isHandlerNotDefined(state)
 
     state.handler()
     state.aborted = true
@@ -19,7 +22,7 @@ const abort = (state) => (reason = null) => {
 }
 
 const onAbort = (state) => (handler = isRequired('handler')) => {
-    isAborted()
+    isAborted(state)
     isFunction(handler, 'handler')
     state.handler = handler
 }

@@ -2,6 +2,7 @@
 
 
 <h3> Examples:
+<br>
 
 > Create a promise that can be canceled
 

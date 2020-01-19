@@ -1,6 +1,6 @@
 {
   "name": "op-abort",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "Simple and pretty utility to abort operations",
   "main": "main.js",
   "license": "MIT",

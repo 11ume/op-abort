@@ -53,7 +53,7 @@ $ npm install op-abort
 
 ### Function contructor of operation controller
 ```ts
-function oa(): Oa // This returns the next methods and properties
+function createOperationAbort(): OperationAbort // This returns the next methods and properties
 ```
 
 ### Is invoked when u want cancel the operation

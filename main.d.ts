@@ -10,4 +10,4 @@ export type OperationAbort = {
 }
 
 declare function createOperationAbort(): OperationAbort
-export default OperationAbortController
+export default createOperationAbort

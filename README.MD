@@ -18,7 +18,7 @@ It can be used to cancel all types of asynchronous operations, since the convent
 
 The other reason why you can use this small library is, for example [p-cancelable](https://github.com/sindresorhus/p-cancelable) is cool, but have a few problems when used in promises that return other promises, 
 or in other espesific contexts. 
-**op-abortion**, is totally agnostic to the logic of a promise and this makes it simpler to clearer and avoid side effects.
+**ope-abort**, is totally agnostic to the logic of a promise and this makes it simpler to clearer and avoid side effects.
 
 <br>
 <br>
@@ -26,7 +26,7 @@ or in other espesific contexts.
 ## Install
 
 ```
-$ npm install op-abort
+$ npm install ope-abort
 ```
 
 ## Usage

@@ -2,7 +2,7 @@
 <br>
 <br>
 
-_**Op** — Is a simple and pretty utility to abort operations 🚏_
+**Op** — Is a simple and pretty utility to abort operations 🚏
 
 <br>
 <br>

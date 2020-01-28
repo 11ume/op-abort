@@ -35,23 +35,23 @@ $ npm install ope-abort
 > Create a promise that can be canceled
 
 ```js
-    const oa = require('op-abort')
-    const display = (each, ac) => new Promise((resolve) => {
+    const opAbort = require('op-abort')
+    const display = (each, oa) => new Promise((resolve) => {
         const clear = setInterval(() => console.log('foo'), each)
-        ac.onAbort(() => {
+        oa.onAbort(() => {
             clearInterval(clear)
             resolve()
         })
     })
 
-    const ac = oa()
-    display(1000, ac)
-    setTimeout(ac.abort, 4000)
+    const oa = opAbort()
+    display(1000, oa)
+    setTimeout(oa.abort, 3000)
 ```
 
 ## API
 
-### Function contructor of operation controller
+### Function contructor of operation abort controller
 ```ts
 function createOperationAbort(): OperationAbort // This returns the next methods and properties
 ```
